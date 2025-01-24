@@ -2,31 +2,31 @@ Aplikacja Rozproszona z Wykorzystaniem RMI
 
 1. Opis:
 
-Projekt to aplikacja rozproszona składająca się z serwera oraz wielu klientów. Aplikacja wykorzystuje technologię RMI (Remote Method Invocation). System pozwala klientom na zdalne wykonywanie operacji na serwerze, w tym pobieranie danych o zwierzętach takich jak koty, psy czy myszy.
+Projekt to aplikacja rozproszona składająca się z serwera oraz wielu klientów. Aplikacja wykorzystuje technologię RMI (Remote Method Invocation). System pozwala klientom na zdalne wykonywanie operacji na serwerze (w tymprzypadku  pobieranie danych o zwierzętach takich jak koty, psy czy myszy)
 
 Aplikacja została zaprojektowana jako symulacja systemu, w którym serwer przechowuje informacje o różnych typach obiektów, a klienci mogą żądać ich pobrania.
 
 2. Architektura
 
-System składa się z następujących komponentów:
+System składa się z:
 
-- Serwer (RmiServer):
+- Serwera (RmiServer):
 
-Udostępnia zdalne metody umożliwiające klientom rejestrację, wyrejestrowanie oraz pobieranie danych, przechowuje kolekcję obiektów (zwierząt), obsługuje rejestrację w rejestrze RMI.
+SErwer udostępnia zdalne metody umożliwiające klientom rejestrację, wyrejestrowanie oraz pobieranie danych, przechowuje kolekcję obiektów (zwierząt), obsługuje rejestrację w rejestrze RMI.
 
-- Interfejs zdalny (ZwierzetaService):
+- Interfejsu zdalnego (ZwierzetaService):
 
 Deklaruje metody zdalne dostępne dla klientów.
 
 Metody:
 
-registerClient() - rejestracja klienta.
+registerClient() - rejestracja klienta
 
-unregisterClient() - wyrejestrowanie klienta.
+unregisterClient() - wyrejestrowanie klienta
 
-getZwierzeta(String typ) - pobranie listy obiektów określonego typu.
+getZwierzeta(String typ) - pobranie listy obiektów określonego typu
 
-- Klienci (RMIClient, RMIClientTest):
+- Klienców (RMIClient, RMIClientTest):
 
 Komunikują się z serwerem za pośrednictwem RMI, wysyłają żądania dotyczące pobierania danych oraz rejestracji/wyrejestrowania, obsługują wielowątkowość, co pozwala na uruchamianie wielu klientów jednocześnie.
 
